@@ -1,7 +1,14 @@
 //scheduler.h
 #include <iostream>
 #include <string>
-using namespace std;
+#include <thread>
+#include <chrono>
+using namespace std; 
+
+//Other header files
+#include "parseSchedule.h"
+#include "fetchSchedule.h"
+#include "notificationAlert.h"
 
 class ScheduleNotification{
     public:
