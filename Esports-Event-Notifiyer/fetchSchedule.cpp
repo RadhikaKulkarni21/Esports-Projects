@@ -40,9 +40,6 @@ vector<ScheduledGames> FetchSchedule::fetchLOLSchedule(const string token){
         }
     }
 
-    cout << "RAW response size: " << response.size() << "\n";
-    //cout << response << "\n";
-
     try{
         auto jsonData = json::parse(response);
         for (const auto& e : jsonData) {

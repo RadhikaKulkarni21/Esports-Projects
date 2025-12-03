@@ -10,10 +10,6 @@ static chrono::system_clock::time_point parseTime(const string timeStamp){
     return chrono::system_clock::from_time_t(mktime(&time));
 }
 
-void NotificationAlert::setWeebHookUrl(string webHookUrl){
-    discordURL = webHookUrl;
-}
-
 void NotificationAlert::checkUpcomingMatches(const vector<ScheduledGames>& games, int hoursAhead){
 
     auto current_time = chrono::system_clock::now();
@@ -25,10 +21,18 @@ void NotificationAlert::checkUpcomingMatches(const vector<ScheduledGames>& games
 
         //This is for when game time is setup
         if (diff > 0 && diff <= hoursAhead) {
-            string msg = "Upcoming Match: " + g.teamA + " vs " + g.teamB + " (" + to_string(diff) + " hours from now)";
+            string msg = "Upcoming Match:\\n"
+                        "Event: " + g.event + "\\n"
+                        "Teams: " + g.teamA + " vs " + g.teamB + "\\n"
+                        "Starts in: " + to_string(diff) + " hours\\n";
             sendNotifAlert(msg);
         }
     }
+}
+
+//Discord Webhook
+void NotificationAlert::setWeebHookUrl(string webHookUrl){
+    discordURL = webHookUrl;
 }
 
 void NotificationAlert::sendNotifAlert(const string notification){

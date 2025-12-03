@@ -11,7 +11,9 @@ using namespace std;
 
 class NotificationAlert{
     public:
-    void checkUpcomingMatches(const vector<ScheduledGames>& games, int minutesAhead = 15);
+    //parsingthe upcoming games
+    //Deafult is set to 15 hours as there are no current leagues but this can be altered for hours
+    void checkUpcomingMatches(const vector<ScheduledGames>& games, int hoursAhead = 15);
     void sendNotifAlert(const string notification);
 
     void setWeebHookUrl(string webhookURL);
