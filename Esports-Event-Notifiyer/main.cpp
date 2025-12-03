@@ -1,6 +1,4 @@
-#include <iostream>
-using namespace std;
-#include "fetchSchedule.h"
+#include "notificationAlert.h"
 
 //notificationAlert - to create the notifications
 //scheduleNotification - to send the actual notification
@@ -9,14 +7,14 @@ using namespace std;
 
 int main(){
     FetchSchedule f;
-    string token = "HIDDEN_KEY(ENTER YOUR KEY)";
+    NotificationAlert n;
+
+    string token = "EXuHpQew8p2TtueUqLleNrNbLjdASNqQv87CII8vT9ur9qpzgc8";
     auto matches = f.fetchLOLSchedule(token);
 
     cout << "Games fetched: " << matches.size() << "\n";
 
-    for (const auto& m : matches){
-        cout<< m.event<<" | " << m.teamA << " vs " << m.teamB << " at " << m.startTime << endl;
-    }
+    n.checkUpcomingMatches(matches, 15);
 
     return 0;
 }
