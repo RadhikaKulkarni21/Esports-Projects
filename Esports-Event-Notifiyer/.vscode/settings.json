@@ -1,5 +1,15 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "any": "cpp",
+        "string_view": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp",
+        "regex": "cpp"
     }
 }

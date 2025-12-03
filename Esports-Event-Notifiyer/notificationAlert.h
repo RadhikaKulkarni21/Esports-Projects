@@ -14,5 +14,8 @@ class NotificationAlert{
     void checkUpcomingMatches(const vector<ScheduledGames>& games, int minutesAhead = 15);
     void sendNotifAlert(const string notification);
 
-    bool initialize();
+    void setWeebHookUrl(string webhookURL);
+
+    private:
+    string discordURL;
 };
