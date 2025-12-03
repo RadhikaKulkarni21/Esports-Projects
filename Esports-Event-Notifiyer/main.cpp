@@ -5,13 +5,14 @@ int main(){
     NotificationAlert n;
 
     //Update with new correct APIs
-    string token = "SOMETOKEN";
-    n.setWeebHookUrl("SOMEAPI");
+    string token = "TOKEN";
+    n.setWeebHookUrl("WEBHOOK");
+    
     auto matches = f.fetchLOLSchedule(token);
 
-    cout << "Games fetched: " << matches.size() << "\n";
+    //cout << "Games fetched: " << matches.size() << "\n";
 
-    n.checkUpcomingMatches(matches, 43);
+    n.checkUpcomingMatches(matches, 44);
 
     return 0;
 }

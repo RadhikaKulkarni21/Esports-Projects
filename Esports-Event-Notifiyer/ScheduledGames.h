@@ -2,8 +2,7 @@
 using namespace std;
 
 struct ScheduledGames{
-    string id;
-    string event;
+    string event;//ongoing championship
     string teamA;
     string teamB;
     string startTime;
