@@ -15,7 +15,6 @@ vector<ScheduledGames> FetchSchedule::fetchLOLSchedule(const string token){
     CURL* curl = curl_easy_init();
     string response;//generate the response after accessing the data
     vector<ScheduledGames> games;
-    //cout<<"Debug test"<<endl;
 
     if(curl){
         //URL can be parsed here: https://developers.pandascore.co/reference/get_lol_matches_upcoming
@@ -30,13 +29,6 @@ vector<ScheduledGames> FetchSchedule::fetchLOLSchedule(const string token){
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
-
-        //disble SSL certs
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
-
-        //check if key is working
-        //curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
         CURLcode res = curl_easy_perform(curl);//should return ok if no error
         curl_slist_free_all(headers);
