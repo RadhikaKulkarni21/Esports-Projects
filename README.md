@@ -14,7 +14,9 @@ Some images to demostarte the final output:
 - You'll need to setup MSYS.
 - You'll need to download and add json.hpp to your target folder - https://github.com/nlohmann/json
 - Discord server/channel ownership for webhook integrations
-- PandaScore account for APIs
+- PandaScore account - https://www.pandascore.co/
+- APIs can be accessed - https://developers.pandascore.co/reference/get_matches
+- Dev docs - https://developers.pandascore.co/docs/introduction
 
 ### How to run
 - You need to run this in MSYS MINGW64 bash(not powershell/VSCode terminal)
