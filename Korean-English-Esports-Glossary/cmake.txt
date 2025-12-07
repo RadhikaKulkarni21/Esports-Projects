@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(esports_glossary
     src/main.cpp
     src/Search.cpp
+    src/Parser.cpp
 )

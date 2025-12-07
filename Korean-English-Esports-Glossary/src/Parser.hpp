@@ -1,0 +1,19 @@
+using namespace std;
+#include "Term.hpp"
+#include <string>
+#include <vector>
+
+#include <sstream>
+#include <fstream>
+#include <iostream>
+
+class Parser{
+    private:
+    //split string into tokens for maps by |
+    vector<string> split(string line, char delimiter);
+    //remove white spaces
+    string trim(const string& s);
+
+    public:
+    vector<term> loadFile(string path);
+};
