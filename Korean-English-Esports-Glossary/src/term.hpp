@@ -9,4 +9,3 @@ struct term{
     string defination;//when/why to use
     string notes;//mis details
 };
-

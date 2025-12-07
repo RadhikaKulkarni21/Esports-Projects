@@ -1,5 +1,6 @@
+using namespace std;
 #include "Search.hpp"
-#include "Term.hpp"
+#include <string>
 #include <algorithm>
 
 //Building the dictionaries
@@ -8,11 +9,8 @@ void Search::build(const vector<term>& terms){
     koreanMap.clear();
 
     for(auto t : terms){
-        string en = t.english;
-        string kr = t.korean;
-
-        englishMap[en] = const_cast<term*>(&t);
-        koreanMap[kr] = const_cast<term*>(&t);
+        englishMap[t.english] = const_cast<term*>(&t);
+        koreanMap[t.korean] = const_cast<term*>(&t);
     }
 }
 
@@ -31,7 +29,7 @@ term* Search::koreanSearch(const string& term){
 }
 
 vector<term*> Search::partialSearch(const string& term){
-    
+    res.clear();
     for(auto p : englishMap){
         if(p.first.find(term) != string::npos){
             res.push_back(p.second);

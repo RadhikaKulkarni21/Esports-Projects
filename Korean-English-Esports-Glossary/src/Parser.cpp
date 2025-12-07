@@ -1,3 +1,6 @@
+#include <sstream>
+#include <fstream>
+#include <iostream>
 #include "Parser.hpp"
 
 vector<term> Parser::loadFile(string path){
@@ -56,11 +59,11 @@ vector<string> Parser::split(string line, char delimiter){
 } 
 
 string Parser::trim(const string& s){
-    char* whitespace = "\t\n\r";
+    const char* whitespace = "\t\n\r ";
     size_t start = s.find_first_not_of(whitespace);
     size_t end = s.find_last_not_of(whitespace);
 
     if(start == string::npos)return "";
 
-    return s.substr(start, end - start - 1);
+    return s.substr(start, end - start + 1);
 }

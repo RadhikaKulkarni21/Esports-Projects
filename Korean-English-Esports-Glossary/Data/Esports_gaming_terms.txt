@@ -1,0 +1,6 @@
+# Korean Term | English term | Category | Defination | Notes
+한타 | team fight | LoL | Major fight around an objective
+궁 | ultimate | General | Ulimate ability for team fights | Short for 궁극기
+라인전 | laning phase | LoL | If lane swap is possible or not
+각 | angle/opportunity | General | Means a window to engage
+프리파밍 | free-farming | General | gather gold where there is no champ to stack items
