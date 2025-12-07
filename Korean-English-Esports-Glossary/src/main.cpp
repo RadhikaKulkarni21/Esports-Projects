@@ -18,8 +18,8 @@ int main(){
         }
         else if (command == "help") {
             cout << "Commands:\n";
-            cout << "  help - show this menu\n";
-            cout << "  quit - exit program\n";
+            cout << "  Menu - show this menu\n";
+            cout << "  Quit - exit program\n";
         }
         else {
             cout << "Unknown command. Type 'help'.\n";
