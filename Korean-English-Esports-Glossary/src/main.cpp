@@ -17,7 +17,9 @@ wstring to_w(const string& utf8) {
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     _setmode(_fileno(stdout), _O_U8TEXT);
+    _setmode(_fileno(stdin), _O_U16TEXT);
 
     std::wcout << L"한국어 <-> ENGLISH E-SPORTS TERMS HELPER\n";
 
@@ -34,24 +36,21 @@ int main(){
     search.build(terms);
     wcout<< L"Type /help for commands"<<endl;
 
-    string command;
-
-    //The conslole won't print Korean alphabets
-    //Helper to convert string to wstring
-    // auto to_w = [](const std::string& s) {
-    //     return std::wstring(s.begin(), s.end());
-    // };
+    wstring command;
 
     while (true) {
         wcout << L"> ";
-        getline(cin, command);
+        getline(wcin, command);
 
-        if (command == "quit") {
+        command.erase(0, command.find_first_not_of(L" \t\n\r"));
+        command.erase(command.find_last_not_of(L" \t\n\r") + 1);
+
+        if (command == L"quit") {
             wcout << L"Exiting...\n";
             break;
         }
 
-        if (command == "help") {
+        if (command == L"help") {
             wcout << L"Commands:\n";
             wcout << L" Menu - show this menu\n";
             wcout << L" Quit - exit program\n";
@@ -59,39 +58,44 @@ int main(){
             continue;
         }
 
-        if(command.rfind("Search", 0) == 0){
-            string find;
-            if (command.length() > 7)
-                find = command.substr(7);
-            else
-                find = "";
+        if(command.rfind(L"Search", 0) == 0){
+            wstring findKr = L"";
 
-            // trim leading/trailing whitespace
-            find.erase(0, find.find_first_not_of(" \t\n\r"));
-            find.erase(find.find_last_not_of(" \t\n\r") + 1);
+            if (command.length() > 7){
+                findKr = command.substr(7);
+                // trim
+                findKr.erase(0, findKr.find_first_not_of(L" \t\n\r"));
+                findKr.erase(findKr.find_last_not_of(L" \t\n\r") + 1);
+                }
 
-            if (find.empty()) {
+            if (findKr.empty()) {
                 wcout << L"Please enter a term after 'Search'\n";
                 continue;
             }
 
-            term* f = search.koreanSearch(find);
-            if (!f) f = search.englishSearch(find);
+            string findEn(findEn.begin(), findEn.end());
+
+            term* f = search.englishSearch(findEn);
+            if (!f) f = search.koreanSearch(findKr);
 
             if (f) {
-                std::wcout << to_w(f->english)
-                           << L" → " << to_w(f->korean) << L"\n";
+                std::wcout << wstring(f->english.begin(), f->english.end()) << L" -> "
+                           << wstring(f->korean.begin(), f->korean.end()) 
+                           << L"\n";
                 continue;
             }
 
-            auto results = search.partialSearch(find);
-            if (!results.empty()) {
-                wcout << results.size() << L" partial matches:\n";
+            auto results = search.partialSearch(findEn, findKr);
+             if (!results.empty()) {
+                std::wcout << results.size() << L" partial matches:\n";
                 for (auto* f : results) {
-                    wcout << L" - " << to_w(f->korean) << L" : " << to_w(f->english) << L"\n";
+                    std::wcout << L" - " 
+                               << std::wstring(f->korean.begin(), f->korean.end()) 
+                               << L" : " 
+                               << std::wstring(f->english.begin(), f->english.end()) 
+                               << L"\n";
                 }
             }
-
             else{
                 wcout<< L"Not found"<<endl;
             }
