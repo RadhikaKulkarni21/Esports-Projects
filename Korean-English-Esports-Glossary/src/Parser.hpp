@@ -14,7 +14,7 @@ class Parser{
     string trim(const string& s);
 
     public:
-    vector<term> loadFile(string path);
+    vector<term> loadFile(const string& path);
 };
 
 #endif

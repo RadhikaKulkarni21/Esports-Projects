@@ -1,6 +1,6 @@
-# Korean Term | English term | Category | Defination | Notes
-한타 | team fight | LoL | Major fight around an objective
-궁 | ultimate | General | Ulimate ability for team fights | Short for 궁극기
-라인전 | laning phase | LoL | If lane swap is possible or not
-각 | angle/opportunity | General | Means a window to engage
-프리파밍 | free-farming | General | gather gold where there is no champ to stack items
+갱 | gank | Tactic | Ambushing an enemy player with multiple teammates |
+team fight | 한타 | Game Event | A fight involving multiple players from each team | Commonly used in League of Legends |
+푸시 | push | Tactic | Forcing a lane to destroy enemy structures |
+support | 서포터 | Role | A player who assists teammates rather than dealing damage |
+ADC | 원딜 | Role | Attack Damage Carry, primary damage dealer in late game |
+dragon | 드래곤 | Objective | Neutral monster that provides team buffs when killed |

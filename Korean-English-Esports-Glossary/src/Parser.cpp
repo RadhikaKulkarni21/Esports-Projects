@@ -1,12 +1,23 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
+#include <locale>
+#include <codecvt>
+#include <windows.h>
 #include "Parser.hpp"
 
-vector<term> Parser::loadFile(string path){
+wstring utf8_to_wstring(const string& utf8) {
+    if (utf8.empty()) return L"";
+    int size_needed = MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.length(), NULL, 0);
+    wstring wstr(size_needed, 0);
+    MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.length(), &wstr[0], size_needed);
+    return wstr;
+}
+
+vector<term> Parser::loadFile(const string& path){
     vector<term> terms;
 
-    ifstream file(path);
+    ifstream file(path, ios::binary);
     if(!file.is_open()){
         cerr<< "File failed to open: " << path << endl;
         return terms;
@@ -15,7 +26,7 @@ vector<term> Parser::loadFile(string path){
     string line;
 
     int lineNumber = 0;
-
+    
     while(getline(file, line)){
         lineNumber++;
 
@@ -32,7 +43,9 @@ vector<term> Parser::loadFile(string path){
 
         term t;
         t.english = trim(tokens[0]);
-        t.korean = trim(tokens[1]);
+
+        t.korean= trim(tokens[1]);
+
         t.category = trim(tokens[2]);
         t.defination = trim(tokens[3]);
         //since we are keeping notes optional, so they or may not be present in the file with terms
@@ -59,11 +72,10 @@ vector<string> Parser::split(string line, char delimiter){
 } 
 
 string Parser::trim(const string& s){
-    const char* whitespace = "\t\n\r ";
+    static const char* whitespace = "\t\n\r ";
     size_t start = s.find_first_not_of(whitespace);
-    size_t end = s.find_last_not_of(whitespace);
-
     if(start == string::npos)return "";
+    size_t end = s.find_last_not_of(whitespace);
 
     return s.substr(start, end - start + 1);
 }
