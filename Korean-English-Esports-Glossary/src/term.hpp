@@ -1,4 +1,6 @@
 #pragma once
+#define byte win_byte_override
+#undef byte
 using namespace std;
 #include <string>
 
@@ -9,4 +11,3 @@ struct term{
     string defination;//when/why to use
     string notes;//mis details
 };
-

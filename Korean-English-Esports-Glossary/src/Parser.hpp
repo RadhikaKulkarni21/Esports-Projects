@@ -1,11 +1,10 @@
+#ifndef PARSER_HPP
+#define PARSER_HPP
+
 using namespace std;
 #include "Term.hpp"
 #include <string>
 #include <vector>
-
-#include <sstream>
-#include <fstream>
-#include <iostream>
 
 class Parser{
     private:
@@ -15,5 +14,7 @@ class Parser{
     string trim(const string& s);
 
     public:
-    vector<term> loadFile(string path);
+    vector<term> loadFile(const string& path);
 };
+
+#endif

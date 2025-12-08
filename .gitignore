@@ -6,3 +6,7 @@ token.txt
 *.exe
 Korean-English-Esports-Glossary/한국어 English gaming terms.docx
 Korean-English-Esports-Glossary/.vscode/tasks.json
+/Korean-English-Esports-Glossary/build/CMakeFiles
+/Korean-English-Esports-Glossary/build/.cmake
+*.json
+/Korean-English-Esports-Glossary/build
