@@ -6,6 +6,7 @@
 #include <windows.h>
 #include "Parser.hpp"
 
+//Convert wstring to string encoded in UTF-8 - Stack Overflow https://share.google/BSKDg2ViSGltDG5p3 
 string wstring_to_utf8(const wstring& w) {
     if (w.empty()) return {};
     int size_needed = WideCharToMultiByte(CP_UTF8, 0, w.c_str(), (int)w.size(),
@@ -56,14 +57,16 @@ vector<term> Parser::loadFile(const wstring& path){
         //since we are keeping notes optional, so they or may not be present in the file with terms
         t.notes = (tokens.size() >= 5 ? trim(tokens[4]):L"");
 
-        //parsing and storing
-        //format would be
-        //"English" "Korean" "Category" "Definations" "Note(OP)"
+        /*parsing and storing
+        format would be
+        "English"| "Korean" | "Category" | "Definations" | "Note(OP)" |
+        Example
+        team fight | 한타 | Game Event | A fight involving multiple players from each team | Commonly used in League of Legends |*/
+        
         terms.push_back(t);
     }
     return terms;
 }
-
 
 vector<wstring> Parser::split(wstring line, wchar_t delimiter) {
     vector<wstring> tokens;

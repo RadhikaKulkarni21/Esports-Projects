@@ -6,15 +6,6 @@
 #include "Parser.hpp"
 #include "Search.hpp"
 
-//The conslole won't print Korean alphabets
-wstring to_w(const string& utf8) {
-    if (utf8.empty()) return L"";
-    int size_needed = MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.size(), nullptr, 0);
-    wstring wstr(size_needed, 0);
-    MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.size(), &wstr[0], size_needed);
-    return wstr;
-}
-
 int main(){
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -28,7 +19,7 @@ int main(){
     
     auto terms = parser.loadFile(L"R:\\Esports Projects\\Esports-Projects\\Korean-English-Esports-Glossary\\Data\\Esports_gaming_terms.txt");
 
-    wcout<< L"Loaded: " << terms.size() << L" terms" << endl;
+    wcout<< L"Loaded Esports Korean/English terms" << endl;
 
     //Search index creation
     Search search;
@@ -76,7 +67,9 @@ int main(){
 
             if (f) {
                 std::wcout << wstring(f->english.begin(), f->english.end()) << L" -> "
-                           << wstring(f->korean.begin(), f->korean.end()) 
+                           << wstring(f->korean.begin(), f->korean.end()) << L"\n"
+                           << L"Category: " << f->category << L"\n"
+                           << L"Defination: " << f->defination
                            << L"\n";
                 continue;
             }
@@ -85,7 +78,8 @@ int main(){
              if (!results.empty()) {
                 wcout << results.size() << L" partial matches:\n";
                 for (auto* f : results) {
-                    wcout << f->korean << L" : " << f->english << L"\n";
+                    wcout << wstring(f->korean.begin(), f->korean.end()) << L" : " 
+                    << wstring(f->english.begin(), f->english.end()) << L"\n";
                 }
             }
             else{
