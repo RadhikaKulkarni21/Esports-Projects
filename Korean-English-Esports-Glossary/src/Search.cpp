@@ -9,38 +9,34 @@ void Search::build(const vector<term>& terms){
 
     for (const auto& t : terms) {
         englishMap[t.english] = t;
-        koreanMap[wstring(t.korean.begin(), t.korean.end())] = t;
+        koreanMap[t.korean] = t;
     }
 }
 
 term* Search::englishSearch(const wstring& term){
-    //Add in korean, look up english
     auto s = englishMap.find(term);
     if(s != englishMap.end()) return &s->second;
     return nullptr;
 }
 
 term* Search::koreanSearch(const wstring& term){
-    //wstring w = wstring(term.begin(), term.end());
     auto s = koreanMap.find(term);
     if (s != koreanMap.end()) return &s->second;
     return nullptr;
 }
 
+//this will return all the matching terms present in the file
 vector<term*> Search::partialSearch(const wstring& term){
-    res.clear();
+    res.clear();//to remove previous storage
 
-    //Korean alphabets not getting read
-    //wstring wterm(term.begin(), term.end());
-
-    for(auto p : englishMap){
+    for(auto& p : englishMap){
         if(p.first.find(term) != wstring::npos){
             res.push_back(&p.second);
         }
     }
 
-    for(auto p : koreanMap){
-        if(p.first.find(term) != string::npos){
+    for(auto& p : koreanMap){
+        if(p.first.find(term) != wstring::npos){
             res.push_back(&p.second);
         }
     }
