@@ -1,7 +1,7 @@
 # Esports Projects
  This repo consists of some projects I am making, to combine my love for epsorts and CS.
 
-## Esports Events Notifier
+## 1) Esports Events Notifier
 - The project is made to give discord notifications of upcomig games on disocrd gaming channel.
 - The project has HTTP API integration (PandaScore), JSON parsing, C++ + libcurl networking, Asynchronous data fetching, Webhook integration (Discord), Clean separation of logic (fetch, parse, notify)
 - Further details can be found in the Readme file inside the folder
@@ -23,3 +23,20 @@ Some images to demostarte the final output:
   
 ```g++ main.cpp fetchSchedule.cpp notificationAlert.cpp -lcurl -o notifier```
 ```./notifier```
+
+## 2) Korean ↔ English Esports Terms Helper
+ - This project was developed to understand Korean/English callouts.
+ - This project uses glossary file which is parsed to search or partial search required terms. If you have korean knowledge you can search its equivalent version.
+ -  Handles Korean Unicode input/output in the console
+ -  Parses a custom glossary file for LoL, Valorant, and other games and uses unordered maps, vectors, and efficient lookup logic
+   Example output:
+   <img width="841" height="683" alt="스크린샷 2025-12-09 144149" src="https://github.com/user-attachments/assets/00344d00-7240-4141-8e31-b7c1c874b93e" />
+
+### Prerequistes
+ - Preinstalled Cmake in system
+ - Cmake tools in VSCode
+
+### How to run
+ - Build and configure cmake to generate build folder
+ - Using terminal, cd to build folder.
+ - Run the projectname.exe file to run the code.
