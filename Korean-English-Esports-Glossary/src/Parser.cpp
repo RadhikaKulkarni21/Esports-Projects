@@ -6,24 +6,29 @@
 #include <windows.h>
 #include "Parser.hpp"
 
-wstring utf8_to_wstring(const string& utf8) {
-    if (utf8.empty()) return L"";
-    int size_needed = MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.length(), NULL, 0);
-    wstring wstr(size_needed, 0);
-    MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), (int)utf8.length(), &wstr[0], size_needed);
-    return wstr;
+string wstring_to_utf8(const wstring& w) {
+    if (w.empty()) return {};
+    int size_needed = WideCharToMultiByte(CP_UTF8, 0, w.c_str(), (int)w.size(),
+                                          nullptr, 0, nullptr, nullptr);
+    string out(size_needed, 0);
+    WideCharToMultiByte(CP_UTF8, 0, w.c_str(), (int)w.size(),
+                        &out[0], size_needed, nullptr, nullptr);
+    return out;
 }
 
-vector<term> Parser::loadFile(const string& path){
+vector<term> Parser::loadFile(const wstring& path){
     vector<term> terms;
 
-    ifstream file(path, ios::binary);
+    string utf8_path = wstring_to_utf8(path);
+
+    wifstream file(utf8_path);
+    file.imbue(locale(file.getloc(), new codecvt_utf8_utf16<wchar_t>));
     if(!file.is_open()){
-        cerr<< "File failed to open: " << path << endl;
+        wcerr<< L"File failed to open: " << path << endl;
         return terms;
     }
 
-    string line;
+    wstring line;
 
     int lineNumber = 0;
     
@@ -31,13 +36,13 @@ vector<term> Parser::loadFile(const string& path){
         lineNumber++;
 
         //Skipping empty lines or irrelevant lines
-        if(line.empty() || line[0] == '#') continue;
+        if(line.empty() || line[0] == L'#') continue;
 
-        auto tokens = split(line, '|');
+        auto tokens = split(line, L'|');
 
         //making sure 4 values are present at any given moment
         if(tokens.size() < 4){
-            cerr << "Invalid entry" << lineNumber << ", expected 4+ lines " << line << endl;
+            wcerr << L"Invalid entry" << lineNumber << L", expected 4+ lines " << line << endl;
             continue;
         }
 
@@ -49,7 +54,7 @@ vector<term> Parser::loadFile(const string& path){
         t.category = trim(tokens[2]);
         t.defination = trim(tokens[3]);
         //since we are keeping notes optional, so they or may not be present in the file with terms
-        t.notes = (tokens.size() >= 5 ? trim(tokens[4]):"");
+        t.notes = (tokens.size() >= 5 ? trim(tokens[4]):L"");
 
         //parsing and storing
         //format would be
@@ -59,23 +64,25 @@ vector<term> Parser::loadFile(const string& path){
     return terms;
 }
 
-vector<string> Parser::split(string line, char delimiter){
-    vector<string> tokens;
-    stringstream ss(line);
-    string item;
 
-    while(getline(ss, item, delimiter)){
+vector<wstring> Parser::split(wstring line, wchar_t delimiter) {
+    vector<wstring> tokens;
+    wstringstream ss(line);
+    wstring item;
+
+    while (getline(ss, item, delimiter)) {
         tokens.push_back(item);
     }//this should return "This", "is", "a","Token"
 
     return tokens;
-} 
+}
 
-string Parser::trim(const string& s){
-    static const char* whitespace = "\t\n\r ";
+wstring Parser::trim(const wstring& s){
+    const wstring whitespace = L"\t\n\r ";
     size_t start = s.find_first_not_of(whitespace);
-    if(start == string::npos)return "";
+    if(start == string::npos)return L"";
     size_t end = s.find_last_not_of(whitespace);
 
+    if (start == wstring::npos) return L"";
     return s.substr(start, end - start + 1);
 }

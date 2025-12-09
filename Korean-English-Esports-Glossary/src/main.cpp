@@ -25,8 +25,8 @@ int main(){
 
     //Load the terms
     Parser parser;
-    //TODO: Create the txt file with all LoL, Valorant terms
-    auto terms = parser.loadFile("R:\\Esports Projects\\Esports-Projects\\Korean-English-Esports-Glossary\\Data\\Esports_gaming_terms.txt");
+    
+    auto terms = parser.loadFile(L"R:\\Esports Projects\\Esports-Projects\\Korean-English-Esports-Glossary\\Data\\Esports_gaming_terms.txt");
 
     wcout<< L"Loaded: " << terms.size() << L" terms" << endl;
 
@@ -45,6 +45,8 @@ int main(){
         command.erase(0, command.find_first_not_of(L" \t\n\r"));
         command.erase(command.find_last_not_of(L" \t\n\r") + 1);
 
+        if (command.empty()) continue;
+
         if (command == L"quit") {
             wcout << L"Exiting...\n";
             break;
@@ -59,24 +61,18 @@ int main(){
         }
 
         if(command.rfind(L"Search", 0) == 0){
-            wstring findKr = L"";
+            wstring query = command.substr(7);
 
-            if (command.length() > 7){
-                findKr = command.substr(7);
-                // trim
-                findKr.erase(0, findKr.find_first_not_of(L" \t\n\r"));
-                findKr.erase(findKr.find_last_not_of(L" \t\n\r") + 1);
-                }
+            query.erase(0, query.find_first_not_of(L" \t\n\r"));
+            query.erase(query.find_last_not_of(L" \t\n\r") + 1);
 
-            if (findKr.empty()) {
+            if (query.empty()) {
                 wcout << L"Please enter a term after 'Search'\n";
-                continue;
-            }
+            continue;
+        }
 
-            string findEn(findEn.begin(), findEn.end());
-
-            term* f = search.englishSearch(findEn);
-            if (!f) f = search.koreanSearch(findKr);
+            term* f = search.englishSearch(query);
+            if (!f) f = search.koreanSearch(query);
 
             if (f) {
                 std::wcout << wstring(f->english.begin(), f->english.end()) << L" -> "
@@ -85,15 +81,11 @@ int main(){
                 continue;
             }
 
-            auto results = search.partialSearch(findEn, findKr);
+            auto results = search.partialSearch(query);
              if (!results.empty()) {
-                std::wcout << results.size() << L" partial matches:\n";
+                wcout << results.size() << L" partial matches:\n";
                 for (auto* f : results) {
-                    std::wcout << L" - " 
-                               << std::wstring(f->korean.begin(), f->korean.end()) 
-                               << L" : " 
-                               << std::wstring(f->english.begin(), f->english.end()) 
-                               << L"\n";
+                    wcout << f->korean << L" : " << f->english << L"\n";
                 }
             }
             else{
@@ -101,6 +93,8 @@ int main(){
             }
             continue;
         }
-        wcout << L"Unknown command. Type 'help'.\n";
+        else{
+            wcout << L"Unknown command. Type 'help'.\n";
+        }
     }
 }

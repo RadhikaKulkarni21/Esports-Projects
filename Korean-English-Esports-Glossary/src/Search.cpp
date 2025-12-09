@@ -13,7 +13,7 @@ void Search::build(const vector<term>& terms){
     }
 }
 
-term* Search::englishSearch(const string& term){
+term* Search::englishSearch(const wstring& term){
     //Add in korean, look up english
     auto s = englishMap.find(term);
     if(s != englishMap.end()) return &s->second;
@@ -27,20 +27,20 @@ term* Search::koreanSearch(const wstring& term){
     return nullptr;
 }
 
-vector<term*> Search::partialSearch(const string& enTerm, const wstring& krTerm){
+vector<term*> Search::partialSearch(const wstring& term){
     res.clear();
 
     //Korean alphabets not getting read
     //wstring wterm(term.begin(), term.end());
 
     for(auto p : englishMap){
-        if(!enTerm.empty() && p.first.find(enTerm) != string::npos){
+        if(p.first.find(term) != wstring::npos){
             res.push_back(&p.second);
         }
     }
 
     for(auto p : koreanMap){
-        if(!krTerm.empty() && p.first.find(krTerm) != string::npos){
+        if(p.first.find(term) != string::npos){
             res.push_back(&p.second);
         }
     }
