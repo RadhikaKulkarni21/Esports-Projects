@@ -7,6 +7,7 @@
 #include "Search.hpp"
 
 int main(){
+    //we are using UTF8 but the Korean is returned in gibberish to we convert
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
     _setmode(_fileno(stdout), _O_U8TEXT);
@@ -19,13 +20,13 @@ int main(){
     
     auto terms = parser.loadFile(L"R:\\Esports Projects\\Esports-Projects\\Korean-English-Esports-Glossary\\Data\\Esports_gaming_terms.txt");
 
-    wcout<< L"Loaded Esports Korean/English terms" << endl;
+    wcout<< L"Loading Esports Korean/English terms..." << endl;
 
     //Search index creation
     Search search;
 
     search.build(terms);
-    wcout<< L"Type /help for commands"<<endl;
+    wcout<< L"Type help for commands"<<endl;
 
     wstring command;
 

@@ -14,7 +14,6 @@ void Search::build(const vector<term>& terms){
 }
 
 term* Search::englishSearch(const wstring& term){
-    //Add in korean, look up english
     auto s = englishMap.find(term);
     if(s != englishMap.end()) return &s->second;
     return nullptr;
@@ -26,6 +25,7 @@ term* Search::koreanSearch(const wstring& term){
     return nullptr;
 }
 
+//this will return all the matching terms present in the file
 vector<term*> Search::partialSearch(const wstring& term){
     res.clear();//to remove previous storage
 

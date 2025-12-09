@@ -17,9 +17,11 @@ string wstring_to_utf8(const wstring& w) {
     return out;
 }
 
+//the text file with all the terms needs to be loaded
 vector<term> Parser::loadFile(const wstring& path){
     vector<term> terms;
 
+    //the path is returned in string so we need to convert it
     string utf8_path = wstring_to_utf8(path);
 
     wifstream file(utf8_path);
@@ -62,7 +64,7 @@ vector<term> Parser::loadFile(const wstring& path){
         "English"| "Korean" | "Category" | "Definations" | "Note(OP)" |
         Example
         team fight | 한타 | Game Event | A fight involving multiple players from each team | Commonly used in League of Legends |*/
-        
+
         terms.push_back(t);
     }
     return terms;
