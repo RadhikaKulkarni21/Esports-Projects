@@ -9,12 +9,12 @@ using namespace std;
 class Parser{
     private:
     //split string into tokens for maps by |
-    vector<string> split(string line, char delimiter);
+    vector<wstring> split(wstring line, wchar_t delimiter);
     //remove white spaces
-    string trim(const string& s);
+    wstring trim(const wstring& s);
 
     public:
-    vector<term> loadFile(const string& path);
+    vector<term> loadFile(const wstring& path);
 };
 
 #endif

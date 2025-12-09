@@ -5,15 +5,15 @@
 
 class Search{
     public:
-    unordered_map<string, term> englishMap;//store english
-    unordered_map<string, term> koreanMap;//store Korean
+    unordered_map<wstring, term> englishMap;//store english
+    unordered_map<wstring, term> koreanMap;//store Korean
     vector<term*> res;
 
     void build (const vector<term>& terms);
     
     //Lookup 한국어 <=> English
-    term* englishSearch(const string& term);
-    term* koreanSearch(const string& term);
+    term* englishSearch(const wstring& term);
+    term* koreanSearch(const wstring& term);
 
-    vector<term*> partialSearch(const string& term);
+    vector<term*> partialSearch(const wstring& term);
 };

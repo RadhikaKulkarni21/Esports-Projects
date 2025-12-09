@@ -1,6 +1,6 @@
-갱 | gank | Tactic | Ambushing an enemy player with multiple teammates |
+gank | 갱 | Tactic | Ambushing an enemy player with multiple teammates |
 team fight | 한타 | Game Event | A fight involving multiple players from each team | Commonly used in League of Legends |
-푸시 | push | Tactic | Forcing a lane to destroy enemy structures |
+push | 푸시 | Tactic | Forcing a lane to destroy enemy structures |
 support | 서포터 | Role | A player who assists teammates rather than dealing damage |
 ADC | 원딜 | Role | Attack Damage Carry, primary damage dealer in late game |
 dragon | 드래곤 | Objective | Neutral monster that provides team buffs when killed |

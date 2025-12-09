@@ -1,13 +1,11 @@
 #pragma once
-#define byte win_byte_override
-#undef byte
 using namespace std;
 #include <string>
 
 struct term{
-    string korean;//한국어 call out
-    string english;//english call out
-    string category;//game/theme/event specific
-    string defination;//when/why to use
-    string notes;//mis details
+    wstring korean;//한국어 call out
+    wstring english;//english call out
+    wstring category;//game/theme/event specific
+    wstring defination;//when/why to use
+    wstring notes;//mis details
 };
