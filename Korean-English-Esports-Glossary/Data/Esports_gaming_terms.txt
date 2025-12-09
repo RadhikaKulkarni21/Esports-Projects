@@ -3,4 +3,128 @@ team fight | 한타 | Game Event | A fight involving multiple players from each 
 push | 푸시 | Tactic | Forcing a lane to destroy enemy structures |
 support | 서포터 | Role | A player who assists teammates rather than dealing damage |
 ADC | 원딜 | Role | Attack Damage Carry, primary damage dealer in late game |
+Mid | 미드 | Role | Playing mid lane to stack up gold | LoL role | 
+Jungle | 정글 | Playing in jungles to stack up side objective gold | LoL role |
+Top | 탑 | Playing solo top lane, assisting jungle with objectives | LoL role |
 dragon | 드래곤 | Objective | Neutral monster that provides team buffs when killed |
+Blood | 피 | Health | Refers to HP |
+Low health | 빨피 | Health | Means you're dangerously low on HP |
+Mana | 마나 | Utility | Utility required to cast spells in game | Mana regenerates the more you level up |
+Out of Mana (OOM) | 마나 없 | Utility |  Call when need assist or recalling |
+AOE | 광 | Attack | Ulimate when it hits certain radius |
+Damage Over Time attacks | 도트 | Attack/Defense | ADC Stats |
+Heal Over Time effects | 도트 힐 | Attack/Defense | Support Stats |
+Damage, attack power | 뎀/대미지 | Attack Defense | Bot lane stats |
+Maximum damage | 맥뎀 | Damage Done/Dealt | Max Damage done by ability |
+Minimum damage| 민뎀 | Damage Done/Dealt | Min Damage done by ability |
+Tanking | 탱 | Champion ability | Damage dealt by champion |
+DPS | 딜 | Damage dealt/done | Damage dealt/done by champion |
+Heals | 힐 | Ability | Support gives healing/ healing potion |
+Tank character | 탱/탱커 | Heavy damage dealing champion | Usually ADC/Jungle roles |
+DPS character | 딜/딜러 | Heavy damage dealing champions | Usually ADC/Jungle roles |
+Healer character | 힐/힐러 | Support abilities | Usually Support roles/Potions |
+Main tank | 맨탱 | Character Ability | Role specific |
+Sub tank | 부탱 | Character Ability | Role specific |
+Inventory | 인벤 | Game Feature | Recall to buy items |
+Gear | 장비 | Game Feature | Armory/ Shields/Items |
+Items | 템 | Game Feature | Armory/ Shields/Items |
+Knife/Swords | 칼 | Character Ability | Role specific |
+Ring | 반지 | Character Ability | Role specific |
+Whisper/Tell | 귓/귓속말 | in-game communication | Communicate with player in game/lobby |
+Materials | 재료 | Game feature | Required to build up main items |
+Real Money | 현질 | Game feature | Buy Champ/Gun skins/Sprays in game |
+QQ/crybaby complaining | 징징 | In game Communication | Used when someone complains in game |
+Level up | 렙업 | Champion/Agent ability | Leveling up gives you more power/abilities |
+So close | ㄲㅂ | In game communication | Used to say "So close"/까비 |
+Shaking | ㄷㄷㄷ | In game communication | Used to say "tense moment" |
+Run away | ㅌㅌㅌ | In game communication | Used to say "Run away" from a fight |
+Noob | ㅊㅂ |  In game communication | Mental strategy to break opponent |
+no comment | ㄴㄷ | In game communication | Hopeless/no comment |
+stfu | ㄷㅊ | In game communication | Swearing(Please refrain from using to avoid getting banned) |
+fucking troll | 개트롤 | In game communication | Swearing(Please refrain from using to avoid getting banned) |
+retard | ㅂㅅ |  In game communication | Swearing(Please refrain from using to avoid getting banned) (병신) |
+crazy | ㅁㅊ | In game communication | Swearing(Please refrain from using to avoid getting banned) (미친) |
+fuck | ㅆㅂ | In game communication | Swearing(Please refrain from using to avoid getting banned) (씨발) |
+good work | ㅅㄱ | In game communication | Swearing(Please refrain from using to avoid getting banned) (수고하셨어요) |
+go/ready | ㄱ | In game communication | Tell the players to be ready |
+lane | 라인 | In game feature | Different lanes in map |
+team chat | 팀보 | In game feature | Communicate |
+hahaha | ㅎㅎㅎ | In game communication | Laughing |
+keke | ㅋㅋㅋ | In game communication | Laughing |
+crying | ㅠㅠ | In game communication | crying |
+Baron Nashor | 바론 | In game objective | Kill to get buff |
+Blue | 블루 | In game side | One of two sides in LoL |
+Red | 레드 | In game side | One of two sides in LoL |
+Base | 집 | In game side | Base to buy/sell items in LoL |
+Missing in action | 미아 | In game communication | ㅌㅁㅇ - Top Missing |
+Flash | 점멸 | In game ability | To escape from a fight/ summoner spell |
+Ward | 와드 | In game ability | Used to get sight/ teleport |
+GG | ㅈㅈ | In game communication | Good game |
+Awesome | 대박 | In game communication | Compliment for a play |
+thanks | ㄱㅅ | In game communication | Thank you |
+okay | ㅇㅋ | In game communication | Okay |
+yes | ㅇㅇ | In game communication | Yes |
+Sorry | ㅈㅅ | In game communication | Sorry/Apologize |
+OMG | 헐 | In game communication | Act surprised |
+Real | ㄹㅇ | In game communication | To compliment |
+Difference | 차이 | In game communication | To flame eg 정글차이 Flaming your jungler |
+teasing | 밀당 |  In game communication | To tease/flirt |
+disgust | 극혐 | In game communication | To flame |
+NoNo | 댓츠노노 | In game communication | That's no, no |
+missed | 머포 | In game action | missed killing a canon minion |
+farming | 파밍 | In game action | collecting gold from minions |
+CS | CS | In game action | Minions killed |
+Blame | 정치질 | In game communication | judging someone among people to make him/her blame |
+Kill | 막타 | In game action | Enemy killed |
+Hit | 킬딸 | In game action | Enemy killed |
+Roaming | 로밍 | In game action | Roaming, wandering into another lane |
+AFK | 탈주 | In game action | Away from keyboard |
+report | 리폿 | In game action | Report someone |
+X9 | X9 | In game action | To ask other 9 players to report one player |
+Trade | 딜교 | In game tactic | to trade a kill for a kill or an objective for an objective |
+Dive | 다이브 | In game tactic | jump into a tower |
+ban | 밴 | In game tactic | To ban a champion |
+pick | 픽 | In game tactic | To pick a champion |
+map | 맵 | In game feature | Maps in a game to play |
+invade | 인베 | In game tactic | To invade for objectives, usually by junglers |
+throw | 던지다 | In game action | trolling(give up on playing) |
+respawn | 우물 | In game action | fountain , respawn spot |
+smite | 스마 | In game action | Jungler summoner spell |
+Nexus | 넥서스 | In game objective | The final element to win game |
+Inhibitor | 억제기 | In game objective | The tower protecting nexus and respawing tier 3 tower |
+Turret | 포탑 | In game objective | The towers in lane that hit you back and you need to kill |
+Tower | 타워 | In game objective | The towers in lane that hit you back and you need to kill |
+Dragon | 드래곤 | In game objective | Main objectives in game to gain buffs |
+Rift Herald | 전령 |  In game objective | Main objectives in game to gain buffs |
+Player | 선수 | In game players | Esports athlete |
+VCT | 비 시 티 | game term | Official league name |
+TeamInfo | 팀 정보 | Game term | Team inforamtion about roles/stats |
+Duelist | 탁격대/ 두얼리스트 | Role | Player role in game |
+Flex | 플렉스 | Role | Player role in game |
+Initiator | 척후대 / 이니쉬에이터 | Role | Player role in game |
+Controller | 전략가 / 콘트롤러  | Role | Player role in game |
+Sentinel | 감사자 / 센티널 | Role | Player role in game |
+head coach | 헤드 코치  | Role | Player role in game |
+Staff | 직원들  | Role | Player role in game |
+Bench | 벤치 | Role | Player role in team usually 6th man |
+Player info | 플레이어 정보 | Game term | Player information about roles/stats |
+New player | 새 플레이어 | Game term | Player information about roles/stats |
+Possibility | 가능성 | Game term | Possible to make a play |
+Role | 역할 | Game term | Someone's role in game igl, entry | 
+Inactive | 비활동 | Game term | Player currently not on team |
+academy | 어캐더미 | Game term | Sister team of the main team | 
+Signed | 서명했습니다 | Game term | Signing a new player |
+Trials | 트라열즈 | Game term | Trailing a player for a position |
+IGL | IGL | In game leader | usually a player who gives calls during the game |
+Sixth player | 여섯 번째 플레이어 | Player term | 6th player on 5 player team usually rotated to play certain role |
+Reserve | 예비 플레이어  |  Player term | 6th player on 5 player team usually rotated to play certain role |
+Two way player | two way 플레이어 | Player term | Player who is playing for both main team and academy player |
+Loaned player | 임대 플레이어 | Player term | Player who is loaned to another team on a temporary contract |
+Head coach | 헤드 코치 | Player term | Coach responsible for head strategy |
+Assistant coach | 부 코치 | Player term | Assisting the main coach with stats, vod reviews |
+Strategic coach | 스트러티직 코치 | Player term | Assisting the main coach with new stats |
+Performance coach | 퍼포먼스 코치 | Player term | Assisting the players to improve in game |
+Staff | 직원 | Staff term | Assisting team outside the game |
+Analyst | 애널리스트 | Player term | Assisting the coaches to analyze opponents post game |
+Manager | 감독/ 매니저 | Staff term | Assisting the players to improve in game |
+
