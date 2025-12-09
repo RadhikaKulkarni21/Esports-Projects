@@ -17,4 +17,7 @@ class Search{
 
     //look up half written queries
     vector<term*> partialSearch(const wstring& term);
+
+    //case sensitive issue
+    static std::wstring to_lower(const std::wstring& s);
 };
