@@ -27,16 +27,18 @@ Some images to demostarte the final output:
 ## 2) Korean ↔ English Esports Terms Helper
  - This project was developed to understand Korean/English callouts.
  - This project uses glossary file which is parsed to search or partial search required terms. If you have korean knowledge you can search its equivalent version.
- -  Handles Korean Unicode input/output in the console
+ -  Handles Korean Unicode input/output in the console using wstring - https://cplusplus.com/reference/string/wstring/
  -  Parses a custom glossary file for LoL, Valorant, and other games and uses unordered maps, vectors, and efficient lookup logic
+ -  Includes romanized version of Korean words to help understand how to pronounce it.
    Example output:
-   <img width="841" height="683" alt="스크린샷 2025-12-09 144149" src="https://github.com/user-attachments/assets/00344d00-7240-4141-8e31-b7c1c874b93e" />
+   <img width="808" height="608" alt="image" src="https://github.com/user-attachments/assets/2de1c052-9142-4fc9-8cce-53200bd89dde" />
 
 ### Prerequistes
- - Preinstalled Cmake in system
- - Cmake tools in VSCode
+ - Preinstalled Cmake in system - https://cmake.org/download/
+ - Cmake tools in VSCode - https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools
+ - A raw data file of all the terms, for exmaple the included data file is in a sequencse of "English | Korean | Category | Defination | Pronounciation |"
 
 ### How to run
- - Build and configure cmake to generate build folder
- - Using terminal, cd to build folder.
- - Run the projectname.exe file to run the code.
+ - Build and configure cmake to generate build folder. If you have issues running cmake, ```CTRL+Shift+p```, run ```CMake: Delete cache and Reconfigure``` and ```Cmake: Build```
+ - Using terminal, cd to build folder. ```cd build```
+ - Run the ${projectname}.exe file to run the code - ```.\Korean-English-Esports-Glossary.exe```
