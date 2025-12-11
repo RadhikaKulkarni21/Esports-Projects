@@ -70,8 +70,8 @@ int main(){
                 std::wcout << wstring(f->english.begin(), f->english.end()) << L" -> "
                            << wstring(f->korean.begin(), f->korean.end()) << L"\n"
                            << L"Category: " << f->category << L"\n"
-                           << L"Defination: " << f->defination
-                           << L"\n";
+                           << L"Defination: " << f->defination << L"\n"
+                           << L"Pronounciation: " << ((!f->notes.empty()) ? f->notes : L"Same as the english word") << L"\n";
                 continue;
             }
 
