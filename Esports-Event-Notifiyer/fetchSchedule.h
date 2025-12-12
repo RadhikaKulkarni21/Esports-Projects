@@ -1,6 +1,4 @@
-//fetcher.h
 #include <iostream>
-//install curl
 #define byte win_byte_override
 #include <curl/curl.h>
 #undef byte

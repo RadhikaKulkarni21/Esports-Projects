@@ -55,7 +55,7 @@ vector<ScheduledGames> FetchSchedule::fetchLOLSchedule(const string token){
             }
 
             m.startTime = e.value("begin_at", "");
-
+            //this should generate League: LeagueName TeamA vs Team B begins at x hours
             games.push_back(m);
         }
     }
