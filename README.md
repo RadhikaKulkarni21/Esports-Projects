@@ -5,7 +5,7 @@
 - The project is made to give discord notifications of upcomig games on disocrd gaming channel.
 - The project has HTTP API integration (PandaScore), JSON parsing, C++ + libcurl networking, Asynchronous data fetching, Webhook integration (Discord), Clean separation of logic (fetch, parse, notify)
 - Further details can be found in the Readme file inside the folder
-Some images to demostarte the final output:
+- Some images to demostarte the final output:
   
 <img width="400" height="326" src="https://github.com/user-attachments/assets/97bbf036-ee03-42f3-a5da-8bdd16c66849"/><img width="400" height="366" src="https://github.com/user-attachments/assets/561dfd83-3c8c-47ef-b07b-d469f677756a"/>
 
@@ -22,6 +22,9 @@ Some images to demostarte the final output:
 - You need to run this in MSYS MINGW64 bash(not powershell/VSCode terminal)
   
 ```g++ main.cpp fetchSchedule.cpp notificationAlert.cpp -lcurl -o notifier```
+
+- This creates the notifier.exe that needs to be run to activate the notfication.
+
 ```./notifier```
 
 ## 2) Korean ↔ English Esports Terms Helper
@@ -39,6 +42,6 @@ Some images to demostarte the final output:
  - A raw data file of all the terms, for exmaple the included data file is in a sequencse of "English | Korean | Category | Defination | Pronounciation |"
 
 ### How to run
- - Build and configure cmake to generate build folder. If you have issues running cmake, ```CTRL+Shift+p```, run ```CMake: Delete cache and Reconfigure``` and ```Cmake: Build```
+ - Build and configure cmake to generate build folder. If you have issues running cmake using VSCode, ```CTRL+Shift+p```, run ```CMake: Delete cache and Reconfigure``` and ```Cmake: Build```
  - Using terminal, cd to build folder. ```cd build```
  - Run the ${projectname}.exe file to run the code - ```.\Korean-English-Esports-Glossary.exe```
