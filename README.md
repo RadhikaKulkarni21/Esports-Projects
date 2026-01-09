@@ -2,7 +2,7 @@
  This repo consists of some projects I am making, to combine my love for epsorts and CS.
 
 ## 1) Esports Events Notifier
-- The project is made to give discord notifications of upcomig games on disocrd gaming channel.
+- The project is made to give discord notifications of upcoming games on discord gaming channel.
 - The project has HTTP API integration (PandaScore), JSON parsing, C++ + libcurl networking, Asynchronous data fetching, Webhook integration (Discord), Clean separation of logic (fetch, parse, notify)
 - Further details can be found in the Readme file inside the folder
 - Some images to demostarte the final output:
