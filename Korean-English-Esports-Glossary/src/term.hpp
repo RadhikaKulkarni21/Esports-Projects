@@ -8,5 +8,5 @@ struct term{
     wstring english;//english call out
     wstring category;//game/theme/event specific
     wstring defination;//when/why to use
-    wstring notes;//mis details
+    wstring notes;//how to pronounce
 };

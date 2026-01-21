@@ -13,6 +13,8 @@ int main(){
     _setmode(_fileno(stdout), _O_U8TEXT);
     _setmode(_fileno(stdin), _O_U16TEXT);
 
+    //L is used for wide character as we are using UT16 storage
+    //https://en.wikipedia.org/wiki/Wide_character
     std::wcout << L"한국어 <-> ENGLISH E-SPORTS TERMS HELPER\n";
 
     //Load the terms

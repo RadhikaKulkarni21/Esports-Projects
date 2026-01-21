@@ -9,6 +9,7 @@ using namespace std;
 class Parser{
     private:
     //split string into tokens for maps by |
+    //wchar_t is wide character
     vector<wstring> split(wstring line, wchar_t delimiter);
     //remove white spaces
     wstring trim(const wstring& s);

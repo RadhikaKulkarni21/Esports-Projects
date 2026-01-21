@@ -6,7 +6,8 @@
 #include <windows.h>
 #include "Parser.hpp"
 
-//Convert wstring to string encoded in UTF-8 - Stack Overflow https://share.google/BSKDg2ViSGltDG5p3 
+//Convert wstring to string encoded in UTF-8 - 
+//Stack Overflow https://stackoverflow.com/questions/4358870/convert-wstring-to-string-encoded-in-utf-8
 string wstring_to_utf8(const wstring& w) {
     if (w.empty()) return {};
     int size_needed = WideCharToMultiByte(CP_UTF8, 0, w.c_str(), (int)w.size(),
@@ -61,7 +62,7 @@ vector<term> Parser::loadFile(const wstring& path){
 
         /*parsing and storing
         format would be
-        "English"| "Korean" | "Category" | "Definations" | "Note(OP)" |
+        "English"| "Korean" | "Category" | "Definations" | "Pronouciation" |
         Example
         team fight | 한타 | Game Event | A fight involving multiple players from each team | Commonly used in League of Legends |*/
 
