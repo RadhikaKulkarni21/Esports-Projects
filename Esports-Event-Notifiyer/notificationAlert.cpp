@@ -12,11 +12,13 @@ static chrono::system_clock::time_point parseTime(const string timeStamp){
 
 void NotificationAlert::checkUpcomingMatches(const vector<ScheduledGames>& games, int hoursAhead){
 
+    //we will subtract the match time to get hours left for the game
     auto current_time = chrono::system_clock::now();
 
     for(const auto& g : games){
         auto matchTime = parseTime(g.startTime);
 
+        //https://en.cppreference.com/w/cpp/chrono/duration.html
         auto diff = chrono::duration_cast<chrono::hours>(matchTime - current_time).count();
 
         //This is for when game time is setup
@@ -61,3 +63,10 @@ void NotificationAlert::sendNotifAlert(const string notification){
     curl_slist_free_all(headers);
     curl_easy_cleanup(curl);
 }
+
+/*
+Ref: 
+https://everything.curl.dev/index.html
+https://gist.github.com/alghanmi/c5d7b761b2c9ab199157
+https://curl.se/libcurl/c/CURLOPT_POSTFIELDS.html
+*/

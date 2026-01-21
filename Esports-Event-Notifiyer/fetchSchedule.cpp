@@ -2,6 +2,7 @@
 
 using json = nlohmann::json;
 
+//https://curl.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
 static size_t WriteCallback(void* contents, size_t size, size_t nmemb, string* buffer) {
     size_t totalSize = size * nmemb;
 
@@ -17,6 +18,7 @@ vector<ScheduledGames> FetchSchedule::fetchLOLSchedule(const string token){
     vector<ScheduledGames> games;
 
     if(curl){
+        //Riot has redirected API keys, so we need to use third party API websites
         //URL can be parsed here: https://developers.pandascore.co/reference/get_lol_matches_upcoming
         const char* url =  "https://api.pandascore.co/lol/matches/upcoming";
 

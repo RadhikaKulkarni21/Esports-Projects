@@ -12,7 +12,8 @@ using namespace std;
 class NotificationAlert{
     public:
     //parsing the upcoming games
-    //Default is set to 15 hours as there are no current leagues but this can be altered for hours/minutes/seconds
+    //Default is set to 15 hours as there are no current leagues 
+    //but this can be altered for hours/minutes/seconds
     void checkUpcomingMatches(const vector<ScheduledGames>& games, int hoursAhead = 15);
     void sendNotifAlert(const string notification);
 
