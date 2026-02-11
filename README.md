@@ -39,7 +39,7 @@
 ### Prerequistes
  - Preinstalled Cmake in system - https://cmake.org/download/
  - Cmake tools in VSCode - https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools
- - A raw data file of all the terms, for exmaple the included data file is in a sequence of "English | Korean | Category | Defination | Pronounciation |"
+ - A raw data file of all the terms, for example the included data file is in a sequence of "English | Korean | Category | Defination | Pronounciation |"
 
 ### How to run
  - Build and configure cmake to generate build folder. If you have issues running cmake using VSCode, ```CTRL+Shift+p```, run ```CMake: Delete cache and Reconfigure``` and ```Cmake: Build```
