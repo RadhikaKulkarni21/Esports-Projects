@@ -1,10 +1,10 @@
 This project consists of:
-HTTP API integration (PandaScore)
-JSON parsing
-C++ + libcurl networking
-Asynchronous data fetching
-Webhook integration (Discord)
-Clean separation of logic (fetch, parse, notify)
+- HTTP API integration (PandaScore)
+- JSON parsing
+- C++ + libcurl networking
+- Asynchronous data fetching
+- Webhook integration (Discord)
+- Clean separation of logic (fetch, parse, notify)
 
 This is made for *LEAGUE OF LEGENDS*, but pandascore has APIs to intergrate other games.
 
