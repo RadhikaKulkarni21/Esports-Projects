@@ -23,9 +23,10 @@ This is made for *LEAGUE OF LEGENDS*, but pandascore has APIs to intergrate othe
 - You can find the required CURL request on here itself
 
 NOTE: RIOT APIs no more allow integrations(atleast I couldn't get them run locally), hence you can't access the data from Riot's official website
+Update: Riot has changed the ways for devs to handle APIs, they are still public and usable.
 
 3) Discord webhooks
-- You need your own server and some channel in that server
+- You need your own server and the text channel in that server
 - The webhooks can be found at channel->edit channel->intergartion->create webhooks
 
 4) Pictures:
